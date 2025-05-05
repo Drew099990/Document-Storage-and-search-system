@@ -1,0 +1,74 @@
+Manager:
+    HomeScreen:
+        name:"home"
+   
+    SearchScreen:
+        name:"search"        
+
+<HomeScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing:10
+        padding: 0, 0, 0, 70
+        MDLabel:
+            text: "[b][size=70]Quick[/size][/b] [color=#1D5C2CFF]Query[/color]"
+            pos_hint: {'x': 0.2, 'center_y':0.5 }
+            color:"#204B2CFF"
+            backgound_color:[1,1,1,1]
+
+            markup:True
+        MDCard:
+            orientation: 'vertical' 
+            size_hint: 0.8,0.5
+            pos_hint: {'center_x':0.5 , 'center_y':0.5 }
+            spacing:10
+            padding: 0,0,0,18
+            MDButton:
+                style: "tonal"
+                pos_hint: {'center_x': 0.5, 'y': 0.2}
+                on_press: app.root.current = "mine"
+                MDButtonText:
+                    text: "Upload"
+            
+            MDButton:
+                style: "tonal"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                on_press: app.root.current = "search"
+                color:[1,1,1,1] 
+                margin: 0, 0, 0, 50
+                MDButtonText:
+                    text: "Search"
+
+<SearchScreen>:    
+    MDBoxLayout:
+        spacing:10
+        orientation: 'vertical'
+        padding: 0,20,0,20
+        
+        MDCard:
+            size_hint: 0.8,0.8 
+            pos_hint: {'center_x': 0.5, 'center_y':0.5 }
+            MDLabel:
+                text: "hi"
+                color:
+                halign:"center"
+        Label:
+            size_hint: None,0.1
+            text: "File Name:"
+            color:    "#4D7057FF"    
+            padding: 20,0,0,0
+        MDTextField:
+            bg_color:[1,1,1,1]
+            hint_text:"user"
+            size_hint: 0.8, None
+            pos_hint: {'center_x': 0.5, 'center_y':0.5 }
+            MDTextFieldTrailingIcon:
+                icon: "book-search"
+            
+        MDButton:
+            style: "tonal"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            on_press: root.Find()
+            MDButtonText:
+                text: "Search"        
+                        
